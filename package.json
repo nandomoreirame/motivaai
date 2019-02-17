@@ -3,6 +3,12 @@
   "version": "0.0.1",
   "description": "~Uma frase de motivação pra dar um UP no seu dia~",
   "main": "index.js",
+  "files": [
+    "lib/motivaai.js",
+    "lib/motivaai.js.map",
+    "lib/motivaai.min.js",
+    "lib/motivaai.min.js.map"
+  ],
   "scripts": {
     "build": "webpack --env dev && webpack --env build",
     "dev": "webpack --env dev --progress --colors --watch",
