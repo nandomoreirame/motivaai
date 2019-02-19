@@ -186,5 +186,8 @@ export default [
   { quote: 'O homem que empenha todo o seu trabalho e imaginação em oferecer por um dólar o mais possível, em vez de menos, está condenado ao sucesso.', author: 'Henry Ford' },
   { quote: 'Os outros são realmente terríveis. A única sociedade possível é a de nós mesmos.', author: 'Oscar Wilde' },
   { quote: 'Não é possível chorar e pensar ao mesmo tempo, pois cada pensamento absorve uma lágrima.', author: 'Jules Renard' },
-  { quote: 'É inútil dizer "estamos a fazer o possível". Precisamos de fazer o que é necessário.', author: 'Winston Churchill' }
+  { quote: 'É inútil dizer "estamos a fazer o possível". Precisamos de fazer o que é necessário.', author: 'Winston Churchill' },
+  { quote: 'Não é a linguagem de programação que define o programador, mas sim sua lógica.', author: 'David Ribeiro Guilherme' },
+  { quote: 'Se você traçar metas absurdamente altas e falhar, seu fracasso será muito melhor que o sucesso de todos.', author: 'James Cameron' },
+  { quote: 'Ter sucesso é falhar repetidamente, mas sem perder o entusiasmo!', author: 'Winston Churchill' }
 ]
