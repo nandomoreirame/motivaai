@@ -2,7 +2,7 @@
 name: Bug report
 about: Crie um relatório para nos ajudar a melhorar
 title: 'Encontrei o seguinte problema [...]'
-labels: ''
+labels: 'bug,help wanted,question'
 assignees: 'nandomoreirame'
 
 ---
