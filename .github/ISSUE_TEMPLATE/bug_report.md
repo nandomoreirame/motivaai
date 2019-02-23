@@ -3,7 +3,7 @@ name: Bug report
 about: Crie um relatório para nos ajudar a melhorar
 title: 'Encontrei o seguinte problema [...]'
 labels: ''
-assignees: '@nandomoreirame'
+assignees: 'nandomoreirame'
 
 ---
 
