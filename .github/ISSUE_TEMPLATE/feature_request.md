@@ -1,20 +1,24 @@
 ---
-name: Feature request
-about: Suggest an idea for this project
-title: ''
+name: Solicitação de melhoria
+about: Sugira uma ideia para este projeto
+title: 'Gostaria de sugerir [...]'
 labels: ''
-assignees: ''
+assignees: '@nandomoreirame'
 
 ---
 
-**Is your feature request related to a problem? Please describe.**
-A clear and concise description of what the problem is. Ex. I'm always frustrated when [...]
+### Sua solicitação de recurso está relacionada a um problema? Por favor descreva-o.
 
-**Describe the solution you'd like**
-A clear and concise description of what you want to happen.
+> Uma descrição clara e concisa do problema. Ex. _Estou sempre frustrado quando [...]_
 
-**Describe alternatives you've considered**
-A clear and concise description of any alternative solutions or features you've considered.
+### Descreva a solução que você gostaria no projeto.
 
-**Additional context**
-Add any other context or screenshots about the feature request here.
+> Uma descrição clara e concisa do que você quer que aconteça.
+
+### Descreva as alternativas que você considerou
+
+> Uma descrição clara e concisa de quaisquer soluções alternativas ou recursos que você considerou.
+
+### Contexto adicional
+
+> Adicione outros contextos ou capturas de tela sobre a solicitação de recurso aqui.
