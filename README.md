@@ -1,6 +1,6 @@
 # MotivaAi
 
-> Gere uma frase motivacional pra dar um UP no seu dia!
+> 💪 Gere uma frase motivacional pra dar um UP no seu dia!
 
 ![MotivaAi](/share.png)
 
