@@ -25,7 +25,7 @@ if (env === 'build') {
     port: 3000,
     server: {
       baseDir: ['./'],
-      index: './demo/index.html'
+      index: './index.html'
     }
   }))
 }

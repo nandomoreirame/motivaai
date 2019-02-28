@@ -1,7 +1,7 @@
 {
   "name": "motivaai",
   "version": "0.0.1",
-  "description": "~Uma frase de motivação pra dar um UP no seu dia~",
+  "description": "~Gere uma frase motivacional pra dar um UP no seu dia!~",
   "main": "index.js",
   "files": [
     "lib/motivaai.js",

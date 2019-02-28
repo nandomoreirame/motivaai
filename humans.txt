@@ -1,0 +1,20 @@
+/* TEAM */
+  Developer: Fernando Moreira
+  Twitter: @oseunando
+  Site: https://nandomoreira.me
+  Github: https://github.com/nandomoreirame
+  Email: nandomoreira.me [at] gmail.com
+  From: Curitiba, Paraná, Brazil
+
+/* THANKS */
+  Developer: Felipe Pontes
+  Twitter: @felipemfp
+  Site: https://felipemfp.github.io/
+  Github: https://github.com/felipemfp
+  From: Natal, Rio Grande do Norte, Brazil
+
+/* SITE */
+  Language: Portuguese
+  Doctype: HTML5
+  IDE: Visual Studio Code - Insiders, Sketch
+  Tech stack: Javascript, HTML5, CSS3
