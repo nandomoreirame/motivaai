@@ -2,7 +2,11 @@
 
 > Gere uma frase motivacional pra dar um UP no seu dia!
 
-![Chuck Norris jokes - A Vue.js project](/share.png)
+![MotivaAi](/share.png)
+
+## Netlify Status
+
+[![Netlify Status](https://api.netlify.com/api/v1/badges/9a7694f4-4634-456c-b81c-c485b0fa53f4/deploy-status)](https://app.netlify.com/sites/motivaai/deploys)
 
 ## Quer Ajudar?
 
