@@ -19,7 +19,7 @@
 
 ## History
 
-Veja as [Releases](/releases) para o changelog detalhado..
+Veja as [Releases](../../releases/latest) para o changelog detalhado..
 
 ## Autor
 
