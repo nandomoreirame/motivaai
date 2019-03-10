@@ -2,6 +2,10 @@
 
 > 💪 Gere uma frase motivacional pra dar um UP no seu dia!
 
+<a href="https://picpay.me/oseunando">
+  <img src="https://img.shields.io/badge/Pague%20um%20caf%C3%A9-R%24%205%2C00-blue.svg" alt="http://picpay.me/oseunando">
+</a>
+
 ![MotivaAi](/share.png)
 
 ## Netlify Status
