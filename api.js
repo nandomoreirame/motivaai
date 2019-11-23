@@ -287,5 +287,15 @@ export default [
   { quote: 'Nada inspira mais coragem ao medroso do que o medo alheio.', author: 'Umberto Eco' },
   { quote: 'A coragem significa um forte desejo de viver, sob a forma de disposição para morrer.', author: 'G. K. Chesterton' },
   { quote: 'Coragem... pequeno soldado do imenso exército. Os teus livros são as tuas armas, a tua classe é a tua esquadra, o campo de batalha é a terra inteira, e a vitória é a civilização humana.', author: 'Edmondo Amicis' },
-  { quote: 'Muitos talentos se perdem por falta de um pouco de coragem.', author: 'Sydney Smith' }
+  { quote: 'Muitos talentos se perdem por falta de um pouco de coragem.', author: 'Sydney Smith' },
+  { quote: 'Faça algo e, se não conseguir, faça outra coisa. Mas, acima de tudo, tente algo.', author: 'Franklin Roosevelt' },
+  { quote: 'Nunca houve uma noite, ou um problema que pudesse derrotar o nascer do sol ou a esperança.', author: 'Bern Williams' },
+  { quote: 'Acredite que você pode, assim você já está no meio do caminho.', author: 'Theodore Roosevelt' },
+  { quote: 'Há pessoas que choram por saber que as rosas têm espinhos. Há outras que sorriem por saber que os espinhos têm rosas!', author: 'Machado de Assis' },
+  { quote: 'A esperança é o sonho do homem acordado.', author: 'Aristóteles' },
+  { quote: 'O pessimista vê dificuldade em cada oportunidade; o otimista vê oportunidade em cada dificuldade.', author: 'Winston Churchill' },
+  { quote: 'Enquanto houver vontade de lutar haverá esperança de vencer.', author: 'Santo Agostinho' },
+  { quote: 'Pessimismo leva à fraqueza, otimismo ao poder.', author: 'William James' },
+  { quote: 'Não espere por uma crise para descobrir o que é importante em sua vida.', author: 'Platão' },
+  { quote: 'A amizade desenvolve a felicidade e reduz o sofrimento, duplicando a nossa alegria e dividindo a nossa dor.', author: 'Joseph Addison' }
 ]
