@@ -2,7 +2,7 @@
   <div class="hero-body">
     <SEO
       :title="`${phrase.quote} ⏤ ${phrase.author}`"
-      :url="window.location.href"
+      :url="$route.path"
     />
     <Phrase />
   </div>
