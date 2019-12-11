@@ -1,64 +1,32 @@
 {
   "name": "motivaai",
-  "version": "0.0.1",
-  "description": "~Gere uma frase motivacional pra dar um UP no seu dia!~",
-  "main": "index.js",
-  "files": [
-    "lib/motivaai.js",
-    "lib/motivaai.js.map",
-    "lib/motivaai.min.js",
-    "lib/motivaai.min.js.map"
-  ],
+  "version": "1.0.0",
+  "description": "💪 Gere uma frase motivacional pra dar um UP no seu dia!",
+  "author": "Fernando Moreira",
+  "private": true,
   "scripts": {
-    "build": "webpack --env dev && webpack --env build",
-    "dev": "webpack --env dev --progress --colors --watch",
-    "lint": "eslint *.js --quiet",
-    "spec": "NODE_ENV=test mocha *.spec.js --require babel-core/register",
-    "pretest": "npm run lint",
-    "test": "npm run spec",
-    "test:watch": "npm run spec -- -w"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/nandomoreirame/motivaai.git"
-  },
-  "keywords": [
-    "motivaai",
-    "motivacao",
-    "frase",
-    "frases",
-    "phrase",
-    "phrases"
-  ],
-  "author": "Fernando Moreira <nandomoreira.me@gmail.com> (https://nandomoreira.me)",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/nandomoreirame/motivaai/issues"
-  },
-  "homepage": "https://github.com/nandomoreirame/motivaai#readme",
-  "devDependencies": {
-    "babel": "^6.23.0",
-    "babel-core": "^6.26.3",
-    "babel-eslint": "^10.0.1",
-    "babel-loader": "^7.0.0",
-    "babel-plugin-add-module-exports": "^1.0.0",
-    "babel-preset-es2015": "^6.24.1",
-    "browser-sync": "^2.26.7",
-    "browser-sync-webpack-plugin": "^2.2.2",
-    "chai": "^4.2.0",
-    "eslint": "^5.15.1",
-    "eslint-config-standard": "^12.0.0",
-    "eslint-plugin-import": "^2.16.0",
-    "eslint-plugin-node": "^8.0.1",
-    "eslint-plugin-promise": "^4.0.1",
-    "eslint-plugin-standard": "^4.0.0",
-    "husky": "^1.3.1",
-    "mocha": "^6.0.2",
-    "nyc": "^13.3.0",
-    "standard-loader": "^6.0.1"
+    "dev": "nuxt",
+    "build": "nuxt build",
+    "start": "nuxt start",
+    "generate": "nuxt generate",
+    "deploy": "npm run build && npm run generate && netlify deploy",
+    "release": "npm run deploy -- --prod",
+    "lint": "eslint --ext .js,.vue --ignore-path .gitignore ."
   },
   "dependencies": {
-    "webpack": "^4.29.6",
-    "webpack-cli": "^3.2.3"
+    "@nuxtjs/axios": "^5.3.6",
+    "@nuxtjs/netlify-files": "^1.0.0",
+    "@nuxtjs/pwa": "^3.0.0-0",
+    "nuxt": "^2.0.0",
+    "nuxt-buefy": "^0.3.2",
+    "slugify": "^1.3.6"
+  },
+  "devDependencies": {
+    "@nuxtjs/eslint-config": "^1.0.1",
+    "@nuxtjs/eslint-module": "^1.0.0",
+    "babel-eslint": "^10.0.1",
+    "eslint": "^6.1.0",
+    "eslint-plugin-nuxt": ">=0.4.2",
+    "netlify-cli": "^2.25.0"
   }
 }
