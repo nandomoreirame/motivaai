@@ -1,27 +1,24 @@
 const siteUrl = `https://motivaai.nandomoreira.me`
 const title = `💪🏼 Motiva Aí`
+const description = process.env.npm_package_description
 
 export default {
   mode: 'spa',
   env: {
     siteUrl,
     title,
-    description: process.env.npm_package_description,
-    ...process.env
+    description
   },
   generate: {
     fallback: true
   },
-  /*
-  ** Headers of the page
-  */
   head: {
     htmlAttrs: {
       dir: 'ltr',
       lang: 'pt-br',
     },
     titleTemplate: `%s | ${title}`,
-    title: process.env.npm_package_description,
+    title: description,
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
@@ -49,57 +46,21 @@ export default {
       { src: '//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5c775ca87636f474', charset: 'utf-8' }
     ]
   },
-  /*
-  ** Customize the progress-bar color
-  */
   loading: false,
-  /*
-  ** Global CSS
-  */
-  css: [
-  ],
-  /*
-  ** Plugins to load before mounting the App
-  */
-  plugins: [
-  ],
   server: {
     port: process.env.PORT || 3000,
     host: '0.0.0.0'
   },
-  /*
-  ** Nuxt.js dev-modules
-  */
   buildModules: [
-    // Doc: https://github.com/nuxt-community/eslint-module
     '@nuxtjs/eslint-module'
   ],
-  /*
-  ** Nuxt.js modules
-  */
   modules: [
     '@nuxtjs/netlify-files',
-    // Doc: https://buefy.github.io/#/documentation
     'nuxt-buefy',
-    // Doc: https://axios.nuxtjs.org/usage
     '@nuxtjs/axios',
     '@nuxtjs/pwa'
   ],
-  /*
-  ** Axios module configuration
-  ** See https://axios.nuxtjs.org/options
-  */
   axios: {
     baseURL: 'https://api-motivaai.nandomoreira.dev'
   },
-  /*
-  ** Build configuration
-  */
-  build: {
-    /*
-    ** You can extend webpack config here
-    */
-    extend (config, ctx) {
-    }
-  }
 }
