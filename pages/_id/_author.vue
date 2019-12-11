@@ -37,7 +37,6 @@ export default {
 
     return $axios.$get('/v1')
       .then(({ data }) => {
-        // console.log(data)
         store.commit('toggleLoading', false)
         store.commit('changePhrases', data)
         store.commit('changePhrase', data[id])

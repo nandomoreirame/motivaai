@@ -28,7 +28,6 @@ export default {
 
     $axios.$get('/v1')
       .then(({ data }) => {
-        // console.log(data)
         store.commit('toggleLoading', false)
         store.commit('changePhrases', data)
         store.commit('changePhrase', randonPhrase(data)[0])
