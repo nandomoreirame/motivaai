@@ -1,7 +1,23 @@
-.button {
-  margin: 10px 0 0 80px;
-}
+<template>
+  <blockquote v-if="phrase.quote && phrase.author" class="quote">
+    <p v-text="phrase.quote" />
+    <small v-text="phrase.author" />
+  </blockquote>
+</template>
 
+<script>
+export default {
+  name: 'Quote',
+  props: {
+    phrase: {
+      type: Object,
+      required: true
+    }
+  }
+}
+</script>
+
+<style lang="css" scoped>
 .quote {
   color: #fff;
   font-size: 1.4rem;
@@ -39,41 +55,4 @@
 .quote small:before {
   content: '⏤ '
 }
-
-.site-footer {
-  width: 100%;
-  text-align: right;
-  background-color: transparent;
-  z-index: 10;
-  padding: 20px;
-}
-
-.site-footer small {
-  display: block;
-}
-
-.site-footer small,
-.site-footer address,
-.site-footer a {
-  color: #fff;
-  font-size: 12px;
-  margin: 0;
-}
-
-.site-footer a {
-  opacity: 0.9;
-  text-decoration: underline;
-}
-
-.message-container {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-}
-
-@media (max-width: 979px) {
-  .site-footer {
-    margin-bottom: 20px;
-  }
-}
+</style>
