@@ -3,6 +3,12 @@ const title = `💪🏼 Motiva Aí`
 
 export default {
   mode: 'spa',
+  env: {
+    siteUrl,
+    title: process.env.npm_package_name,
+    description: process.env.npm_package_description,
+    ...process.env
+  },
   generate: {
     fallback: true
   },
@@ -29,21 +35,12 @@ export default {
       { name: 'mobile-web-app-capable', content: 'yes' },
       { name: 'generator', content: 'Visual Studio Code - Insiders' },
       { name: 'revisit-after', content: '10 days' },
-      { rel: 'canonical', href: siteUrl },
-      { hid: 'description', name: 'description', content: process.env.npm_package_description || '' },
-      { property: 'og:title', content: title },
       { property: 'og:site_name', content: 'MotivaAi' },
-      { property: 'og:url', content: 'nononono' },
-      { property: 'og:description', content: process.env.npm_package_description },
       { property: 'og:type', content: 'website' },
       { property: 'og:image', content: `${siteUrl}/share.png` },
-      { property: 'og:image:alt', content: process.env.npm_package_description },
       { name: 'twitter:card', content: 'summary_large_image' },
       { name: 'twitter:site', content: '@oseunando' },
-      { name: 'twitter:title', content: title },
-      { name: 'twitter:description', content: process.env.npm_package_description },
-      { name: 'twitter:image', content: `${siteUrl}/share.png` },
-      { name: 'twitter:image:alt', content: process.env.npm_package_description }
+      { name: 'twitter:image', content: `${siteUrl}/share.png` }
     ],
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
