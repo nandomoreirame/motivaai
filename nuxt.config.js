@@ -5,7 +5,7 @@ export default {
   mode: 'spa',
   env: {
     siteUrl,
-    title: process.env.npm_package_name,
+    title,
     description: process.env.npm_package_description,
     ...process.env
   },
@@ -20,7 +20,7 @@ export default {
       dir: 'ltr',
       lang: 'pt-br',
     },
-    titleTemplate: `%s | ${process.env.npm_package_name}`,
+    titleTemplate: `%s | ${title}`,
     title: process.env.npm_package_description,
     meta: [
       { charset: 'utf-8' },
