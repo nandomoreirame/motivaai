@@ -6,6 +6,11 @@
   Email: nandomoreira.me [at] gmail.com
   From: Curitiba, Paraná, Brazil
 
+  Developer: Gilberto Domingues
+  Github: https://github.com/GIlbertoDomingues
+  Email: giba.front [at] gmail.com
+  From: Curitiba, Paraná, Brazil
+
 /* THANKS */
   Developer: Felipe Pontes
   Twitter: @felipemfp
@@ -16,5 +21,5 @@
 /* SITE */
   Language: Portuguese
   Doctype: HTML5
-  IDE: Visual Studio Code - Insiders, Sketch
-  Tech stack: Javascript, HTML5, CSS3
+  IDE: Visual Studio Code, Sketch
+  Tech stack: Nuxt, Vuejs, JavaScript, HTML5, CSS3
