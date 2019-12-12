@@ -1,9 +1,9 @@
 ---
 name: Solicitação de melhoria
 about: Sugira uma ideia para este projeto
-title: 'Gostaria de sugerir [...]'
-labels: 'improvement,question'
-assignees: 'nandomoreirame'
+title: Gostaria de sugerir [...]
+labels: improvement, question
+assignees: nandomoreirame
 
 ---
 

@@ -1,9 +1,9 @@
 ---
-name: Bug report
+name: Reportar um bug
 about: Crie um relatório para nos ajudar a melhorar
-title: 'Encontrei o seguinte problema [...]'
-labels: 'bug,help wanted,question'
-assignees: 'nandomoreirame'
+title: Encontrei o seguinte problema [...]
+labels: bug, help wanted, question
+assignees: nandomoreirame
 
 ---
 
