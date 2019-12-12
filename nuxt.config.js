@@ -52,7 +52,10 @@ export default {
     host: '0.0.0.0'
   },
   buildModules: [
-    '@nuxtjs/eslint-module'
+    '@nuxtjs/eslint-module',
+    ['@nuxtjs/google-analytics', {
+      id: process.env.GOOGLE_ANALYTICS || 'UA-000000000-1'
+    }]
   ],
   modules: [
     '@nuxtjs/netlify-files',
