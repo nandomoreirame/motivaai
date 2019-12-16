@@ -10,7 +10,7 @@
 
 <script>
 import { mapState } from 'vuex'
-import { randonPhrase } from '@/utils'
+import { randonPhrase, randonBackground } from '@/utils'
 
 export default {
   name: 'Home',
@@ -25,6 +25,7 @@ export default {
   },
   fetch ({ $axios, store }) {
     store.commit('toggleLoading', true)
+    store.commit('changeBackground', randonBackground())
 
     $axios.$get('/v1')
       .then(({ data }) => {
