@@ -4,7 +4,7 @@
       :title="`${phrase.quote} ⏤ ${phrase.author}`"
       :url="$route.path"
     />
-    <Phrase />
+    <Phrase :phrase="phrase" />
   </div>
 </template>
 
@@ -23,20 +23,28 @@ export default {
       phrase: ({ phrase }) => phrase
     })
   },
-  fetch ({ $axios, store }) {
+  async asyncData ({ $axios, store }) {
     store.commit('toggleLoading', true)
     store.commit('changeBackground', randonBackground())
 
-    $axios.$get('/v1')
-      .then(({ data }) => {
-        store.commit('toggleLoading', false)
-        store.commit('changePhrases', data)
-        store.commit('changePhrase', randonPhrase(data)[0])
-      })
-      .catch((error) => {
-        store.commit('toggleLoading', false)
-        console.error(error) // eslint-disable-line
-      })
+    const { phrases } = store.state
+
+    if (phrases.length > 0) {
+      store.commit('toggleLoading', false)
+      store.commit('changePhrase', randonPhrase(phrases)[0])
+      store.commit('changePhrases', phrases)
+      return { data: phrases }
+    }
+
+    const { data } = await $axios.$get('/v1')
+
+    if (data.length > 0) {
+      store.commit('toggleLoading', false)
+      store.commit('changePhrase', randonPhrase(data)[0])
+      store.commit('changePhrases', data)
+    }
+
+    return { data }
   }
 }
 </script>

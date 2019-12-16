@@ -1,40 +1,37 @@
 <template>
   <div class="hero-body">
     <SEO
-      :title="`${phrase.quote} ⏤ ${phrase.author}`"
       :url="$route.path"
+      title="Frases"
     />
-    <Phrase :phrase="phrase" />
+    <ul>
+      <li v-for="(phrase, i) in data" :key="i">
+        <nuxt-link :to="`/${i}/${slug(phrase.author)}`">
+          <Quote :phrase="phrase" />
+        </nuxt-link>
+      </li>
+    </ul>
   </div>
 </template>
 
 <script>
-import { mapState } from 'vuex'
-import { randonBackground } from '@/utils'
+import { randonBackground, slugAuthor } from '@/utils'
 
 export default {
-  validate ({ params }) {
-    return /^\d+$/.test(params.id)
-  },
+  name: 'Home',
   components: {
-    Phrase: () => import('@/components/phrase.vue'),
+    Quote: () => import('@/components/quote.vue'),
     SEO: () => import('@/components/seo.vue')
   },
-  computed: {
-    ...mapState({
-      phrase: ({ phrase }) => phrase
-    })
-  },
-  async asyncData ({ $axios, store, params }) {
-    const { id } = params
-    const { phrases } = store.state
-
+  async asyncData ({ $axios, store }) {
     store.commit('toggleLoading', true)
     store.commit('changeBackground', randonBackground())
 
+    const { phrases } = store.state
+
     if (phrases.length > 0) {
       store.commit('toggleLoading', false)
-      store.commit('changePhrase', phrases[id])
+      store.commit('changePhrases', phrases)
       return { data: phrases }
     }
 
@@ -42,11 +39,15 @@ export default {
 
     if (data.length > 0) {
       store.commit('toggleLoading', false)
-      store.commit('changePhrase', data[id])
       store.commit('changePhrases', data)
     }
 
     return { data }
+  },
+  methods: {
+    slug (author) {
+      return slugAuthor(author)
+    }
   }
 }
 </script>
