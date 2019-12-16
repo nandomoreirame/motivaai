@@ -1,21 +1,32 @@
+import axios from 'axios'
+import { slugAuthor } from './utils'
+
+const baseURL = 'https://api-motivaai.nandomoreira.dev'
 const siteUrl = `https://motivaai.nandomoreira.me`
 const title = `💪🏼 Motiva Aí`
 const description = process.env.npm_package_description
 
 export default {
-  mode: 'spa',
+  mode: 'universal',
   env: {
     siteUrl,
     title,
     description
   },
   generate: {
-    fallback: true
+    fallback: true,
+    routes () {
+      axios.defaults.baseURL = baseURL
+      return axios.get(`v1`)
+        .then(({ data }) =>
+          data.data.map((phrase, id) =>
+            `/${id}/${slugAuthor(phrase.author)}`))
+    }
   },
   head: {
     htmlAttrs: {
       dir: 'ltr',
-      lang: 'pt-br',
+      lang: 'pt-br'
     },
     titleTemplate: `%s | ${title}`,
     title: description,
@@ -64,6 +75,6 @@ export default {
     '@nuxtjs/pwa'
   ],
   axios: {
-    baseURL: 'https://api-motivaai.nandomoreira.dev'
-  },
+    baseURL
+  }
 }

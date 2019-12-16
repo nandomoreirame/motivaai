@@ -19,11 +19,16 @@ export default {
   components: {
     Quote: () => import('@/components/quote.vue')
   },
+  props: {
+    phrase: {
+      type: Object,
+      required: true
+    }
+  },
   computed: {
     ...mapState({
       isLoading: ({ isLoading }) => isLoading,
-      phrases: ({ phrases }) => phrases,
-      phrase: ({ phrase }) => phrase
+      phrases: ({ phrases }) => phrases
     })
   },
   methods: {
