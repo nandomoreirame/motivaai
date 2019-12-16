@@ -9,3 +9,9 @@ export const randonPhrase = (phrases, count = 1) =>
   filterPhrases(shuffleArray(phrases), count)
 
 export const slugAuthor = authorName => slugify(authorName, { lower: true, remove: /[*+~.()'"!:@]/g })
+
+const randonColor = () =>
+  '#000000'.replace(/0/g, () => (~~(Math.random() * 16)).toString(16))
+
+export const randonBackground = () =>
+  '-webkit-linear-gradient(141deg, ' + randonColor() + ' , ' + randonColor() + ')'

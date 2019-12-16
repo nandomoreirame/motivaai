@@ -10,6 +10,7 @@
 
 <script>
 import { mapState } from 'vuex'
+import { randonBackground } from '@/utils'
 
 export default {
   validate ({ params }) {
@@ -29,6 +30,7 @@ export default {
     const { phrases } = store.state
 
     store.commit('toggleLoading', true)
+    store.commit('changeBackground', randonBackground())
 
     if (phrases.length > 0) {
       store.commit('toggleLoading', false)

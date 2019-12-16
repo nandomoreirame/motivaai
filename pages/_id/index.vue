@@ -3,7 +3,7 @@
 </template>
 
 <script>
-import { slugAuthor } from '@/utils'
+import { slugAuthor, randonBackground } from '@/utils'
 
 export default {
   validate ({ params }) {
@@ -16,6 +16,7 @@ export default {
     let phrase = {}
 
     store.commit('toggleLoading', true)
+    store.commit('changeBackground', randonBackground())
 
     if (phrases.length > 0) {
       store.commit('toggleLoading', false)
