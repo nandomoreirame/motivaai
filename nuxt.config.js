@@ -1,10 +1,7 @@
-import axios from 'axios'
-import { slugAuthor } from './utils'
-
-const baseURL = 'https://api-motivaai.nandomoreira.dev'
-const siteUrl = `https://motivaai.nandomoreira.me`
 const title = `💪🏼 Motiva Aí`
 const description = process.env.npm_package_description
+const baseURL = 'https://api-motivaai.nandomoreira.dev/v1'
+const siteUrl = `https://motivaai.nandomoreira.dev`
 
 export default {
   mode: 'universal',
@@ -14,14 +11,7 @@ export default {
     description
   },
   generate: {
-    fallback: true,
-    routes () {
-      axios.defaults.baseURL = baseURL
-      return axios.get(`v1`)
-        .then(({ data }) =>
-          data.data.map((phrase, id) =>
-            `/${id}/${slugAuthor(phrase.author)}`))
-    }
+    fallback: true
   },
   head: {
     htmlAttrs: {
@@ -58,6 +48,7 @@ export default {
     ]
   },
   loading: false,
+  // plugins: ['~/plugins/axios'],
   server: {
     port: process.env.PORT || 3000,
     host: '0.0.0.0'
@@ -65,7 +56,7 @@ export default {
   buildModules: [
     '@nuxtjs/eslint-module',
     ['@nuxtjs/google-analytics', {
-      id: process.env.GOOGLE_ANALYTICS || 'UA-000000000-1'
+      id: process.env.google_analytics || 'UA-000000000-1'
     }]
   ],
   modules: [

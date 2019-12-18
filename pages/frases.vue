@@ -35,7 +35,7 @@ export default {
       return { data: phrases }
     }
 
-    const { data } = await $axios.$get('/v1')
+    const data = await $axios.$get('/phrases')
 
     if (data.length > 0) {
       store.commit('toggleLoading', false)

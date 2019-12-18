@@ -1,5 +1,5 @@
 # Redirect default Netlify subdomain to primary domain
-http://motivaai.netlify.com/* https://motivaai.nandomoreira.me/:splat 301!
-http://motivaai.nandomoreira.me/* https://motivaai.nandomoreira.me/:splat 301!
-
-/*      /index.html     200
+http://motivaai.netlify.com/* https://motivaai.nandomoreira.dev/:splat 301!
+https://motivaai.netlify.com/* https://motivaai.nandomoreira.dev/:splat 301!
+http://motivaai.nandomoreira.me/* https://motivaai.nandomoreira.dev/:splat 301!
+https://motivaai.nandomoreira.me/* https://motivaai.nandomoreira.dev/:splat 301!
