@@ -4,18 +4,26 @@
       :url="$route.path"
       title="Frases"
     />
-    <ul>
-      <li v-for="(phrase, i) in data" :key="i">
-        <nuxt-link :to="`/${i}/${slug(phrase.author)}`">
-          <Quote :phrase="phrase" />
+    <div>
+      <p>
+        <nuxt-link :to="`/frases`" class="is-white">
+          Total de <strong>{{ phrases.length }}</strong> frases
         </nuxt-link>
-      </li>
-    </ul>
+      </p>
+      <ul>
+        <li v-for="(phrase) in phrases" :key="phrase.id">
+          <nuxt-link :to="`/${phrase.id}/${slug(phrase.author)}`">
+            <Quote :phrase="phrase" />
+          </nuxt-link>
+        </li>
+      </ul>
+    </div>
   </div>
 </template>
 
 <script>
-import { randonBackground, slugAuthor } from '@/utils'
+import { slugAuthor } from '@/utils'
+import asyncData from '@/services/phrases'
 
 export default {
   name: 'Home',
@@ -23,27 +31,7 @@ export default {
     Quote: () => import('@/components/quote.vue'),
     SEO: () => import('@/components/seo.vue')
   },
-  async asyncData ({ $axios, store }) {
-    store.commit('toggleLoading', true)
-    store.commit('changeBackground', randonBackground())
-
-    const { phrases } = store.state
-
-    if (phrases.length > 0) {
-      store.commit('toggleLoading', false)
-      store.commit('changePhrases', phrases)
-      return { data: phrases }
-    }
-
-    const data = await $axios.$get('/phrases')
-
-    if (data.length > 0) {
-      store.commit('toggleLoading', false)
-      store.commit('changePhrases', data)
-    }
-
-    return { data }
-  },
+  asyncData,
   methods: {
     slug (author) {
       return slugAuthor(author)
@@ -51,3 +39,15 @@ export default {
   }
 }
 </script>
+
+<style lang="css" scoped>
+p {
+  display: block;
+  text-align: center;
+  padding: 15px;
+  font-size: 1.375rem /* 22/16 */;
+}
+a {
+  color: #fff;
+}
+</style>
