@@ -9,7 +9,7 @@
 </template>
 
 <script>
-import { randonBackground } from '@/utils'
+import asyncData from '@/services/phrases'
 
 export default {
   validate ({ params }) {
@@ -19,27 +19,6 @@ export default {
     Phrase: () => import('@/components/phrase.vue'),
     SEO: () => import('@/components/seo.vue')
   },
-  async asyncData ({ $axios, store, params }) {
-    const { id } = params
-    let { phrase } = store.state
-
-    store.commit('toggleLoading', true)
-    store.commit('changeBackground', randonBackground())
-
-    if (Object.keys(phrase).length && phrase.id === id) {
-      store.commit('toggleLoading', false)
-      store.commit('changePhrase', phrase)
-      return { phrase }
-    }
-
-    phrase = await $axios.$get(`/phrase/${id}`)
-
-    if (Object.keys(phrase).length) {
-      store.commit('toggleLoading', false)
-      store.commit('changePhrase', phrase)
-    }
-
-    return { phrase }
-  }
+  asyncData
 }
 </script>
