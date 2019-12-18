@@ -22,8 +22,8 @@ export default {
       store.commit('toggleLoading', false)
       phrase = phrases[id]
     } else {
-      phrase = await $axios.$get('/v1')
-        .then(({ data }) => {
+      phrase = await $axios.$get('/phrases')
+        .then((data) => {
           store.commit('toggleLoading', false)
           store.commit('changePhrases', data)
           store.commit('changePhrase', data[id])

@@ -9,7 +9,6 @@
 </template>
 
 <script>
-import { mapState } from 'vuex'
 import { randonBackground } from '@/utils'
 
 export default {
@@ -20,33 +19,27 @@ export default {
     Phrase: () => import('@/components/phrase.vue'),
     SEO: () => import('@/components/seo.vue')
   },
-  computed: {
-    ...mapState({
-      phrase: ({ phrase }) => phrase
-    })
-  },
   async asyncData ({ $axios, store, params }) {
     const { id } = params
-    const { phrases } = store.state
+    let { phrase } = store.state
 
     store.commit('toggleLoading', true)
     store.commit('changeBackground', randonBackground())
 
-    if (phrases.length > 0) {
+    if (Object.keys(phrase).length && phrase.id === id) {
       store.commit('toggleLoading', false)
-      store.commit('changePhrase', phrases[id])
-      return { data: phrases }
+      store.commit('changePhrase', phrase)
+      return { phrase }
     }
 
-    const { data } = await $axios.$get('/v1')
+    phrase = await $axios.$get(`/phrase/${id}`)
 
-    if (data.length > 0) {
+    if (Object.keys(phrase).length) {
       store.commit('toggleLoading', false)
-      store.commit('changePhrase', data[id])
-      store.commit('changePhrases', data)
+      store.commit('changePhrase', phrase)
     }
 
-    return { data }
+    return { phrase }
   }
 }
 </script>

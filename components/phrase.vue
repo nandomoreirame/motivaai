@@ -32,10 +32,19 @@ export default {
     })
   },
   methods: {
-    changeQuote () {
-      const phraseId = Math.floor(Math.random() * this.phrases.length)
-      const phrase = this.phrases[phraseId]
-      this.$router.push(`/${phraseId}/${slugAuthor(phrase.author)}`)
+    async changeQuote () {
+      let phrases = this.phrases
+      this.$store.commit('toggleLoading', true)
+
+      if (!phrases.length) {
+        phrases = await this.$axios.$get('/phrases')
+        this.$store.commit('changePhrases', phrases)
+      }
+
+      const radomPhraseId = Math.floor(Math.random() * phrases.length)
+      const phrase = phrases[radomPhraseId]
+
+      return this.$router.push(`/${radomPhraseId}/${slugAuthor(phrase.author)}`)
     }
   }
 }
