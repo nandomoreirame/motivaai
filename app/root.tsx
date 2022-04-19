@@ -58,7 +58,7 @@ export default function App() {
   }, [transition]);
 
   const shuffleBackgrounds = () => {
-    return shuffleArray(['--bg1', '--bg2', '--bg3', '--bg4'])[0];
+    return shuffleArray<string>(['--bg1', '--bg2', '--bg3', '--bg4'])[0];
   };
 
   return (

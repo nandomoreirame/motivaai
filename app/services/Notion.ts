@@ -16,15 +16,15 @@ class NotionService {
       const _sorts = [
         {
           property: 'author',
-          direction: shuffleArray(['descending', 'ascending'])[0],
+          direction: shuffleArray<string>(['descending', 'ascending'])[0],
         },
         {
           property: 'id',
-          direction: shuffleArray(['descending', 'ascending'])[0],
+          direction: shuffleArray<string>(['descending', 'ascending'])[0],
         },
         {
           property: 'phrase',
-          direction: shuffleArray(['descending', 'ascending'])[0],
+          direction: shuffleArray<string>(['descending', 'ascending'])[0],
         },
       ];
 
@@ -44,7 +44,12 @@ class NotionService {
       const { results } = await this.notion.databases.query({
         database_id: databaseId,
         filter: _filter,
-        sorts: [shuffleArray(_sorts)[0]],
+        sorts: [
+          shuffleArray<{
+            property: string;
+            direction: string;
+          }>(_sorts)[0],
+        ],
         ...restParams,
       });
 

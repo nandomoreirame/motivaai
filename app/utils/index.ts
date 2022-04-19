@@ -2,11 +2,12 @@ import slugify from 'slugify';
 import type { Phrase } from '~/tyles/phrase';
 import type { PhraseDatabase } from '~/tyles/schema';
 
-export const shuffleArray = arr =>
-  arr
+export function shuffleArray<T>(arr: T[]): T[] {
+  return arr
     .map(a => [Math.random(), a])
     .sort((a, b) => a[0] - b[0])
     .map(a => a[1]);
+}
 
 export function generatePhrasePath({ id, phrase }: { id: string; phrase: PhraseDatabase }): string {
   return `${slugify(phrase, {
