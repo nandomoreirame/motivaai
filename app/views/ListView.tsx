@@ -21,7 +21,7 @@ export function ListView({ phrases }: ListViewProps): React.ReactElement {
           Misturar lista
         </button>
         <NavLink className="btn-grad" to="/random">
-          Motiva Ai!
+          Motiva Aí!
         </NavLink>
       </h3>
 

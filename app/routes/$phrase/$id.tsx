@@ -9,6 +9,17 @@ type LoaderData = {
   phrase: PhraseType;
 };
 
+export const meta: MetaFunction = ({ data }) => {
+  if (!data || data?.status) return { title: data?.status || 'Oops!', description: data?.statusText };
+
+  const { phrase } = data as LoaderData;
+
+  return {
+    title: `Frade de ${phrase.author} | 💪🏼  MotivaAí`,
+    description: `${phrase.phrase} ⎼ ${phrase.author}`,
+  };
+};
+
 export async function loader(submission: LoaderSubmission) {
   const data = await loaderPhrase<PhraseType>(submission);
   return json<LoaderData>(data);

@@ -1,3 +1,4 @@
+import type { MetaFunction } from '@remix-run/node';
 import { json } from '@remix-run/node';
 import { useLoaderData } from '@remix-run/react';
 import { loaderList } from '~/loaders/list';
@@ -6,6 +7,10 @@ import { ListView } from '~/views/ListView';
 
 type LoaderListData = {
   phrases: PhraseType[];
+};
+
+export const meta: MetaFunction = () => {
+  return { title: `💪🏼  MotivaAí`, description: `Gere uma frase motivacional pra dar um UP no seu dia!` };
 };
 
 export async function loader() {

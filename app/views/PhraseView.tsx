@@ -16,7 +16,7 @@ export function PhraseView({ phrase }: PhraseViewProps): React.ReactElement {
       <div className="container">
         <Phrase phrase={phrase} big />
         <NavLink className="btn-grad" to="/random">
-          Motiva Ai!
+          Motiva Aí!
         </NavLink>
       </div>
     </div>
