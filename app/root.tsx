@@ -8,6 +8,17 @@ export const meta: MetaFunction = () => ({
   charset: 'utf-8',
   title: 'MotivaAi',
   viewport: 'width=device-width,initial-scale=1',
+  keywords: 'frase, motivação, motivacional, gerador, gere, dia, frases, autor, autores',
+  'og:locale': 'pt_BR',
+  language: 'Portuguese',
+  googlebot: 'index,follow',
+  robots: 'index,follow,noodp',
+  country: 'Brazil',
+  'mobile-web-app-capable': 'yes',
+  generator: 'Visual Studio Code - Insiders',
+  'revisit-after': '10 days',
+  'twitter:card': 'summary_large_image',
+  'twitter:site': '@oseunando',
 });
 
 export function links() {

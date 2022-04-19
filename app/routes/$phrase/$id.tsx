@@ -39,6 +39,9 @@ export default function Index() {
 
   return (
     <div className="full">
+      <NavLink className="back" to="/">
+        <span>←</span> <small>Voltar para listagem</small>
+      </NavLink>
       <div className="container">
         <Phrase phrase={phrase} big />
         <NavLink className="btn-grad" to="/random">

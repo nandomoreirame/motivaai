@@ -1,7 +1,7 @@
 {
   "name": "@nandomoreirame/motivaai",
   "private": true,
-  "description": "",
+  "description": "💪 Gere uma frase motivacional pra dar um UP no seu dia!",
   "license": "MIT",
   "sideEffects": false,
   "scripts": {

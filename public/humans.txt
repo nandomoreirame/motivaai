@@ -1,0 +1,25 @@
+/* TEAM */
+  Developer: Fernando Moreira
+  Twitter: @oseunando
+  Site: https://nandomoreira.me
+  Github: https://github.com/nandomoreirame
+  Email: nandomoreira.me [at] gmail.com
+  From: Curitiba, Paraná, Brazil
+
+/* SITE */
+  Language: Portuguese
+  Doctype: HTML5
+  IDE: Visual Studio Code, Sketch
+  Tech stack: Nuxt, Vuejs, ECMAScript, HTML5, CSS3
+
+/* THANKS */
+  Developer: Gilberto Domingues
+  Github: https://github.com/GIlbertoDomingues
+  Email: giba.front [at] gmail.com
+  From: Curitiba, Paraná, Brazil
+
+  Developer: Felipe Pontes
+  Twitter: @felipemfp
+  Site: https://felipemfp.github.io/
+  Github: https://github.com/felipemfp
+  From: Natal, Rio Grande do Norte, Brazil
