@@ -1,5 +1,15 @@
 import type { MetaFunction } from '@remix-run/node';
-import { Links, LiveReload, Meta, Outlet, Scripts, ScrollRestoration, useTransition } from '@remix-run/react';
+import { json } from '@remix-run/node';
+import {
+  Links,
+  LiveReload,
+  Meta,
+  Outlet,
+  Scripts,
+  ScrollRestoration,
+  useLoaderData,
+  useTransition,
+} from '@remix-run/react';
 import styles from '~/styles/main.css';
 import { Loading } from './components/Loading';
 import { shuffleArray } from './utils';
@@ -47,7 +57,17 @@ export function links() {
   ];
 }
 
+type LoaderData = {
+  gaId: string;
+};
+
+export async function loader() {
+  const googleAnalyticsId = process.env.SITE_GA_ID || '';
+  return json<LoaderData>({ googleAnalyticsId });
+}
+
 export default function App() {
+  const { googleAnalyticsId } = useLoaderData<LoaderData>();
   const [bgClass, setBgClass] = React.useState('--bg1');
   const [loading, setLoading] = React.useState(false);
   const transition = useTransition();
@@ -66,6 +86,21 @@ export default function App() {
       <head>
         <Meta />
         <Links />
+        {process.env.NODE_ENV === 'production' && googleAnalyticsId && (
+          <>
+            <script async src="https://www.googletagmanager.com/gtag/js?id=UA-125092358-4" />
+            <script
+              dangerouslySetInnerHTML={{
+                __html: `
+                window.dataLayer = window.dataLayer || [];
+                function gtag(){dataLayer.push(arguments);}
+                gtag('js', new Date());
+                gtag('config', '${googleAnalyticsId}');
+              `,
+              }}
+            />
+          </>
+        )}
       </head>
       <body className={`${bgClass} ${loading ? '--loading' : ''}`}>
         {loading && <Loading />}
