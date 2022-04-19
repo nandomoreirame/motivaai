@@ -1,0 +1,33 @@
+{
+  "todo-tree.tree.scanMode": "workspace",
+  "todo-tree.highlights.customHighlight": {
+    "[ ]": {
+      "background": "#760000"
+    },
+    "[x]": {
+      "background": "#01b101"
+    }
+  },
+  "eslint.alwaysShowStatus": true,
+  "eslint.enable": true,
+  "eslint.format.enable": true,
+  "editor.formatOnSave": true,
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "editor.tabSize": 2,
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": true
+  },
+  "search.exclude": {
+    "**/build": true,
+    "**/public": true,
+    "**/api": true,
+    "**/node_modules": true,
+    "**/styles/css": true
+  },
+  "files.exclude": {
+    "**/.cache": true,
+    "**/build": true,
+    "**/node_modules": true
+  },
+  "rpc.enabled": true
+}
