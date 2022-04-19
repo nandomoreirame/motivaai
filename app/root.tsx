@@ -58,7 +58,7 @@ export function links() {
 }
 
 type LoaderData = {
-  gaId: string;
+  googleAnalyticsId: string;
 };
 
 export async function loader() {
@@ -88,7 +88,7 @@ export default function App() {
         <Links />
         {process.env.NODE_ENV === 'production' && googleAnalyticsId && (
           <>
-            <script async src="https://www.googletagmanager.com/gtag/js?id=UA-125092358-4" />
+            <script async src={`https://www.googletagmanager.com/gtag/js?id=${googleAnalyticsId}`} />
             <script
               dangerouslySetInnerHTML={{
                 __html: `
