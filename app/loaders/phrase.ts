@@ -22,7 +22,5 @@ export async function loaderPhrase<T>({ params }: LoaderSubmission): T {
     },
   });
 
-  return {
-    phrase: normalizePhrase(phraseDatabase[0]),
-  };
+  return normalizePhrase(phraseDatabase[0]);
 }

@@ -16,13 +16,13 @@ export const meta: MetaFunction = ({ data }) => {
 
   return {
     title: `Frade de ${phrase.author} | 💪🏼  MotivaAí`,
-    description: `${phrase.phrase} ⎼ ${phrase.author}`,
+    description: `“${phrase.phrase}” ⏤ ${phrase.author}`,
   };
 };
 
 export async function loader(submission: LoaderSubmission) {
-  const data = await loaderPhrase<PhraseType>(submission);
-  return json<LoaderData>(data);
+  const phrase = await loaderPhrase<PhraseType>(submission);
+  return json<LoaderData>({ phrase });
 }
 
 export default function Index() {

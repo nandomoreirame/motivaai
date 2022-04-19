@@ -21,6 +21,7 @@
     "@vercel/node": "^1.14.0",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
+    "react-icons": "^4.3.1",
     "slugify": "^1.6.5"
   },
   "devDependencies": {
