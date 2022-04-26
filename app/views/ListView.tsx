@@ -21,7 +21,7 @@ export function ListView({ phrases }: ListViewProps): React.ReactElement {
         <button className="btn btn-shuffle" onClick={() => setNewPhrases(shuffleArray<PhraseType>(phrases))}>
           <span className="btn__inner">
             <BsShuffle />
-            <span>Misturar lista</span>
+            <span>Mistura Aí!</span>
           </span>
         </button>
         <NavLink className="btn btn-random" to="/random">
